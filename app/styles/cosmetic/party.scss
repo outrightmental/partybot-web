@@ -1,0 +1,20 @@
+#party {
+  position:absolute;
+  margin:0 0 0 0;
+  padding: 0 0 0 0;
+  width:1px;
+  height:1px;
+  top:50%;
+  left:50%;
+  overflow:visible;
+  text-align:center;
+  vertical-align: middle;
+  .logo {
+    width:256px;
+    height:256px;
+    position:absolute;
+    left:-128px;
+    top:-128px;
+    background: url(/images/lunatic-roger.png) no-repeat center center;
+  }
+}
