@@ -25,6 +25,14 @@ angular.module('fngbVideotournamentWebApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/message', {
+        templateUrl: 'partials/message',
+        controller: 'MessageCtrl'
+      })
+      .when('/message', {
+        templateUrl: 'partials/message',
+        controller: 'MessageCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
