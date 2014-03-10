@@ -9,10 +9,10 @@ default: &default
       safe: true
 
 development: &development
-  uri: mongodb://localhost/mmf-development
+  uri: mongodb://localhost/partybot-development
 
 test: &test
-  uri: mongodb://localhost/mmf-test
+  uri: mongodb://localhost/partybot-test
 
 production: &production
   uri: #{process.env.MONGOLAB_URI}

@@ -22,15 +22,9 @@ Twitter
     AUTH_TWITTER_CONSUMERSECRET
     AUTH_TWITTER_CALLBACKURL
 
-# Staging
-
-http://mmf-staging.herokuapp.com/
-
 # Production
 
-**NOT YET OPERATIONAL**
-
-http://mmf-prod.herokuapp.com/
+http://party.botserve.me
 
 # AngularJS + Express Full Stack Generator
 

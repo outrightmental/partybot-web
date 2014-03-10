@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e79f8df-5a4e-4b2c-8e33-4066b45e75cf" name="Default" comment="" />
+    <list default="true" id="3e79f8df-5a4e-4b2c-8e33-4066b45e75cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/cosmetic/brand.scss" afterPath="$PROJECT_DIR$/app/styles/cosmetic/brand.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.jade" afterPath="$PROJECT_DIR$/app/views/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/lib/config/db/mongo.yml" afterPath="$PROJECT_DIR$/dist/lib/config/db/mongo.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/db/mongo.yml" afterPath="$PROJECT_DIR$/lib/config/db/mongo.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/navbar.jade" afterPath="$PROJECT_DIR$/app/views/partials/navbar.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="partybot-web.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,59 +72,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file leaf-file-name="mongo.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/config/db/mongo.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="24" selection-start="77" selection-end="77" vertical-scroll-proportion="0.14604463" vertical-offset="0" max-vertical-offset="493">
+            <state line="11" column="35" selection-start="217" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="brand.scssc" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.sass-cache/bbd90ad2fe82df872459b584590b86f1deb21882/brand.scssc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="39" selection-start="188" selection-end="188" vertical-scroll-proportion="6.6666665" vertical-offset="270" max-vertical-offset="1656">
+            <state line="25" column="68" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="648">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/package.json">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.tmp/concat/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="211" selection-end="211" vertical-scroll-proportion="-3.3333333" vertical-offset="18" max-vertical-offset="1656">
+            <state line="9663" column="1" selection-start="215953" selection-end="215953" vertical-scroll-proportion="0.0" vertical-offset="173783" max-vertical-offset="178038">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/views/partials/main.jade">
+      <file leaf-file-name="brand.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.tmp/styles/cosmetic/brand.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="41" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="450">
-              <folding>
-                <marker date="1394426029224" expanded="true" signature="54:137" placeholder="..." />
-                <marker date="1394426029224" expanded="true" signature="142:195" placeholder="..." />
-                <marker date="1394426029224" expanded="true" signature="217:296" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="2" column="1" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scenarios.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/e2e/scenarios.js">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.tmp/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="18" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+            <state line="9663" column="1" selection-start="215953" selection-end="215953" vertical-scroll-proportion="0.0" vertical-offset="173783" max-vertical-offset="176598">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="-1.862069" vertical-offset="378" max-vertical-offset="5058">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="brand.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/cosmetic/brand.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="198">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/index.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="11" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="607" max-vertical-offset="1314">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/navbar.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="0" selection-start="590" selection-end="590" vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="468">
               <folding />
             </state>
           </provider>
@@ -126,15 +160,6 @@
         <entry file="file://$PROJECT_DIR$/test/e2e/public-relations/cosmetic-details.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="1080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="468">
               <folding />
             </state>
           </provider>
@@ -160,6 +185,14 @@
         <option value="$PROJECT_DIR$/test/e2e/scenarios.js" />
         <option value="$PROJECT_DIR$/test/e2e/public-relations/cosmetic-details.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/lib/config/db/mongo.yml" />
+        <option value="$PROJECT_DIR$/.tmp/concat/styles/main.css" />
+        <option value="$PROJECT_DIR$/.tmp/styles/cosmetic/brand.css" />
+        <option value="$PROJECT_DIR$/.tmp/styles/main.css" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/styles/cosmetic/brand.scss" />
+        <option value="$PROJECT_DIR$/app/views/index.jade" />
+        <option value="$PROJECT_DIR$/app/views/partials/navbar.jade" />
       </list>
     </option>
   </component>
@@ -210,6 +243,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partybot-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,7 +534,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1767000" />
+    <option name="totallyTimeSpent" value="2427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1600" height="876" extended-state="6" />
@@ -536,9 +623,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="41" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="450">
           <folding>
-            <marker date="1394426029224" expanded="true" signature="54:137" placeholder="..." />
-            <marker date="1394426029224" expanded="true" signature="142:195" placeholder="..." />
-            <marker date="1394426029224" expanded="true" signature="217:296" placeholder="..." />
+            <marker date="1394426558360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394426558360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394426558360" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -566,7 +653,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="77" selection-end="77" vertical-scroll-proportion="0.14604463" vertical-offset="0" max-vertical-offset="493">
+        <state line="4" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config/db/mongo.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="217" selection-end="225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.sass-cache/bbd90ad2fe82df872459b584590b86f1deb21882/brand.scssc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="68" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="648">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.tmp/concat/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9663" column="1" selection-start="215953" selection-end="215953" vertical-scroll-proportion="0.0" vertical-offset="173783" max-vertical-offset="178038">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.tmp/styles/cosmetic/brand.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="1" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.tmp/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9663" column="1" selection-start="215953" selection-end="215953" vertical-scroll-proportion="0.0" vertical-offset="173783" max-vertical-offset="176598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="414" selection-end="414" vertical-scroll-proportion="-1.862069" vertical-offset="378" max-vertical-offset="5058">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/cosmetic/brand.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="441">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="11" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.0" vertical-offset="607" max-vertical-offset="1314">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/navbar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="590" selection-end="590" vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="468">
           <folding />
         </state>
       </provider>
