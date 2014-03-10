@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fngbVideotournamentWebApp')
+angular.module('partybotWebApp')
   .factory('Session', function ($resource) {
     return $resource('/api/session/');
   });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fngbVideotournamentWebApp', [
+angular.module('partybotWebApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

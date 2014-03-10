@@ -2,7 +2,7 @@ describe('Controller: MainCtrl', function () {
   'use strict';
 
   // load the controller's module
-  beforeEach(module('fngbVideotournamentWebApp'));
+  beforeEach(module('partybotWebApp'));
 
   var MainCtrl,
     scope,

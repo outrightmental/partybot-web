@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fngbVideotournamentWebApp')
+angular.module('partybotWebApp')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id', {
       id: '@id'
