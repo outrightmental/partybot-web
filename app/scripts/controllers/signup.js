@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('partybotWebApp')
+angular.module('fngbVideotournamentWebApp')
   .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
@@ -25,7 +25,7 @@ angular.module('partybotWebApp')
           // Update validity of form fields that match the mongoose errors
           angular.forEach(err.errors, function(error, field) {
             form[field].$setValidity('mongoose', false);
-            $scope.errors[field] = error.message;
+            $scope.errors[field] = error.type;
           });
         });
       }

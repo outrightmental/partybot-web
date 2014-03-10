@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('partybotWebApp')
+angular.module('fngbVideotournamentWebApp')
   .controller('LoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};

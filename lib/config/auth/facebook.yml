@@ -1,0 +1,14 @@
+#
+# As a Visitor, I want to login with Facebook in order to use the Application.
+# @see https://www.pivotaltracker.com/story/show/62342046
+#
+
+development: &default
+  clientID: 1469859026561587
+  clientSecret: add36caca76075f3a0eab0be9153820f
+  callbackURL: http://localhost:9000/auth/facebook/callback
+
+production: &production
+  clientID: #{process.env.AUTH_FACEBOOK_CLIENTID}
+  clientSecret: #{process.env.AUTH_FACEBOOK_CLIENTSECRET}
+  callbackURL: #{process.env.AUTH_FACEBOOK_CALLBACKURL}

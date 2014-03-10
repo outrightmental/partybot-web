@@ -1,0 +1,14 @@
+#
+# As a Visitor, I want to login with Twitter in order to use the Application.
+# @see https://www.pivotaltracker.com/story/show/62342048
+#
+
+development: &default
+  consumerKey: 216JvQ5F6UK8l2dHKqG6A
+  consumerSecret: B32I8J1q3tT971IBieiucztXAWkqnLRnbdgSNxPNRM
+  callbackURL: http://localhost:9000/auth/twitter/callback
+
+production: &production
+  consumerKey: #{process.env.AUTH_TWITTER_CONSUMERKEY}
+  consumerSecret: #{process.env.AUTH_TWITTER_CONSUMERSECRET}
+  callbackURL: #{process.env.AUTH_TWITTER_CALLBACKURL}

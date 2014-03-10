@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('partybotWebApp')
+angular.module('fngbVideotournamentWebApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',

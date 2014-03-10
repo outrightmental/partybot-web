@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('partybotWebApp')
+angular.module('fngbVideotournamentWebApp')
 
   /**
    * Removes server error when user updates input
