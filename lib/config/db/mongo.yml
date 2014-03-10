@@ -1,0 +1,21 @@
+#
+# As a Developer, I want to implement MongoDB
+# @see https://www.pivotaltracker.com/story/show/62342026
+#
+
+default: &default
+  options:
+    db:
+      safe: true
+
+development: &development
+  uri: mongodb://localhost/mmf-development
+
+test: &test
+  uri: mongodb://localhost/mmf-test
+
+production: &production
+  uri: #{process.env.MONGOLAB_URI}
+
+staging:
+  <<: *production

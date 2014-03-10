@@ -1,0 +1,20 @@
+div(ng-include='\'partials/navbar\'')
+
+.jumbotron
+  h1
+    | Welcome
+    span(ng-show='currentUser') {{ ' ' + currentUser.name }}
+    | !
+
+  p.lead
+    | Headline Goes Here Right Here Right Here.
+
+.row.marketing
+  div(ng-repeat='thing in awesomeThings')
+    h4 {{thing.name}}
+    p {{thing.info}}
+
+.footer
+  p
+    | &copy; #{ new Date().getFullYear() }
+    a(href="http://www.outrightmental.com", target="_blank") Outright Mental Inc.
