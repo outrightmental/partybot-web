@@ -1,3 +1,21 @@
+body {
+  background-color: #202020;
+}
+
+.jumbotron {
+  background-color: black;
+  color:white;
+}
+
+.jumbotron, .footer {
+  a{
+    color:white;
+    &:hover {
+      color:white;
+    }
+  }
+}
+
 .partybot-logo {
   img {
     width:64px;
