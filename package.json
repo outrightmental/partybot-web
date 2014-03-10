@@ -33,7 +33,8 @@
     "passport": "latest",
     "passport-local": "latest",
     "passport-facebook": "latest",
-    "passport-twitter": "latest"
+    "passport-twitter": "latest",
+    "twilio":"~1.6.0"
   },
   "devDependencies": {
     "connect-livereload": "~0.3.0",
