@@ -25,15 +25,7 @@ angular.module('partybotWebApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .when('/message', {
-        templateUrl: 'partials/message',
-        controller: 'MessageCtrl'
-      })
-      .when('/message', {
-        templateUrl: 'partials/message',
-        controller: 'MessageCtrl'
-      })
-      .when('/Chat', {
+      .when('/chat', {
         templateUrl: 'partials/chat',
         controller: 'ChatCtrl'
       })
