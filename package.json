@@ -22,19 +22,20 @@
     "url": "https://github.com/outrightmental/partybot-web.git"
   },
   "dependencies": {
-    "connect-mongo": "~0.4.0",
-    "express": "~3.4.3",
+    "connect-mongo": "latest",
+    "express": "latest",
     "jade": "latest",
     "konfig": "latest",
-    "lodash": "~2.4.1",
-    "mongoose": "~3.5.5",
-    "moment": "~2.5.1",
-    "mongoose-unique-validator": "~0.3.0",
+    "lodash": "latest",
+    "mongoose": "latest",
+    "moment": "latest",
+    "mongoose-unique-validator": "latest",
     "passport": "latest",
     "passport-local": "latest",
     "passport-facebook": "latest",
     "passport-twitter": "latest",
-    "twilio":"~1.6.0"
+    "socket.io":"latest",
+    "twilio":"latest"
   },
   "devDependencies": {
     "connect-livereload": "~0.3.0",

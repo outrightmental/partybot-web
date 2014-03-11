@@ -3,13 +3,15 @@
  * Laboratory: Outright Mental Inc.
  */
 // e2e tests
-describe("PartyBot Web Application", function () {
-  describe("Application Home", function () {
+describe('PartyBot Web Application', function () {
+  'use strict';
+
+  describe('Application Home', function () {
     beforeEach(function () {
-      browser().navigateTo("/");
+      browser().navigateTo('/');
     });
 
-    it("should be live", function () {
+    it('should be live', function () {
       // TBD
     });
   });

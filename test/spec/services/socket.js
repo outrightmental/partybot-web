@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: Message', function () {
+describe('Service: socket', function () {
 
   // load the service's module
   beforeEach(module('partybotWebApp'));
 
   // instantiate service
-  var Message;
-  beforeEach(inject(function (_Message_) {
-    Message = _Message_;
+  var socket;
+  beforeEach(inject(function (_socket_) {
+    socket = _socket_;
   }));
 
   it('should do something', function () {
-    expect(!!Message).toBe(true);
+    expect(!!socket).toBe(true);
   });
 
 });
