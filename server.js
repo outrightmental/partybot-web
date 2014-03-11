@@ -47,10 +47,16 @@ require('./lib/config/express')(app);
 // Routing
 require('./lib/routes')(app);
 
+var http = require('http'),
+  server = http.createServer(app);
+
 // Start server
-app.listen(config.port, function () {
+server.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
+
+// Socket I/O
+var io = require('socket.io').listen(server);
 
 // Expose app
 if (!exports)
