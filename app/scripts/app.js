@@ -33,6 +33,10 @@ angular.module('partybotWebApp', [
         templateUrl: 'partials/message',
         controller: 'MessageCtrl'
       })
+      .when('/Chat', {
+        templateUrl: 'partials/chat',
+        controller: 'ChatCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
