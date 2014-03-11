@@ -1,8 +1,7 @@
 PartyBot Web Application
 ========================
 
-author: (http://www.nickkaye.com)[Nick Kaye]
-laboratory: (http://www.outrightmental.com)[Outright Mental Inc.]
+by [Outright Mental Inc.](http://www.outrightmental.com)
 
 [![Build Status](https://travis-ci.org/outrightmental/partybot-web.png?branch=master)](https://travis-ci.org/outrightmental/partybot-web)
 
