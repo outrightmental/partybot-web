@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('partybotWebApp')
-  .controller('MainCtrl', function ($scope, $timeout, Message, $) {
+  .controller('MainCtrl', function ($scope, $timeout, Message) {
 
-    var $party = $('#party');
     $scope.messages = [];
+    $scope.mainMessage = null;
 
     // watch the messages array for changes and update the counts
     $scope.$watch('messages', function () {
-      console.log('messages updated');
     }, true);
 
     // Poll server to regularly update messages
@@ -29,7 +28,8 @@ angular.module('partybotWebApp')
      * @param message
      */
     function processMessage(message) {
-      $party.html('<h1>' + message.content + '</h1>');
+      if (message && message.content && message.content.length)
+        $scope.mainMessage = message.content;
       message.state = 'completed';
       message.$update();
     }
@@ -38,7 +38,7 @@ angular.module('partybotWebApp')
      *
      */
     function reset() {
-      $party.html('<div class="logo"></div>');
+      $scope.mainMessage = null;
     }
 
     // when the controller is destroyed, cancel the polling

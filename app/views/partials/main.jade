@@ -1,2 +1,4 @@
 #party
-  .logo
+  .logo(ng-hide="mainMessage")
+  .mainMessage(ng-show="mainMessage")
+    h1 {{mainMessage}}
