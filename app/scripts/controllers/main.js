@@ -28,8 +28,9 @@ angular.module('partybotWebApp')
      * @param message
      */
     function processMessage(message) {
-      if (message && message.content && message.content.length)
+      if (message && message.content && message.content.length) {
         $scope.mainMessage = message.content;
+      }
       message.state = 'completed';
       message.$update();
     }
