@@ -1,4 +1,4 @@
-// Generated on 2014-02-19 using generator-angular-fullstack 1.2.7
+// Generated on 2014-03-21 using generator-angular-fullstack 1.3.2
 'use strict';
 
 // # Globbing
@@ -54,8 +54,12 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
+      mochaTest: {
+        files: ['test/server/{,*/}*.js'],
+        tasks: ['mochaTest']
+      },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
+        files: ['test/client/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
@@ -70,9 +74,9 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/views/{,*//*}*.{html,jade}',
           '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
-          '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
-      
+
         options: {
           livereload: true
         }
@@ -107,12 +111,9 @@ module.exports = function (grunt) {
       ],
       test: {
         options: {
-          jshintrc: 'test/.jshintrc'
+          jshintrc: 'test/client/.jshintrc'
         },
-        src: [
-          'test/spec/{,*/}*.js',
-          'test/e2e/{,*/}*.js'
-        ]
+        src: ['test/client/spec/{,*/}*.js']
       }
     },
 
@@ -123,9 +124,9 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/views/*',
-            '<%= yeoman.dist %>/public/*',
-            '!<%= yeoman.dist %>/public/.git*',
+            '<%= yeoman.dist %>/*',
+            '!<%= yeoman.dist %>/.git*',
+            '!<%= yeoman.dist %>/Procfile'
           ]
         }]
       },
@@ -157,10 +158,44 @@ module.exports = function (grunt) {
       }
     },
 
+    // Debugging with node inspector
+    'node-inspector': {
+      custom: {
+        options: {
+          'web-host': 'localhost'
+        }
+      }
+    },
+
+    // Use nodemon to run server in debug mode with an initial breakpoint
+    nodemon: {
+      debug: {
+        script: 'server.js',
+        options: {
+          nodeArgs: ['--debug-brk'],
+          env: {
+            PORT: process.env.PORT || 9000
+          },
+          callback: function (nodemon) {
+            nodemon.on('log', function (event) {
+              console.log(event.colour);
+            });
+
+            // opens browser on initial server start
+            nodemon.on('config:update', function () {
+              setTimeout(function () {
+                require('open')('http://localhost:8080/debug?port=5858');
+              }, 500);
+            });
+          }
+        }
+      }
+    },
+
     // Automatically inject Bower components into the app
     'bower-install': {
       app: {
-        html: '<%= yeoman.app %>/views/index.jade',
+        html: '<%= yeoman.app %>/views/index.html',
         ignorePath: '<%= yeoman.app %>/',
         exclude: ['bootstrap-sass']
       }
@@ -214,7 +249,7 @@ module.exports = function (grunt) {
     // additional tasks can operate on them
     useminPrepare: {
       html: ['<%= yeoman.app %>/views/index.html',
-             '<%= yeoman.app %>/views/index.jade'],
+        '<%= yeoman.app %>/views/index.jade'],
       options: {
         dest: '<%= yeoman.dist %>/public'
       }
@@ -223,7 +258,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/views/{,*/}*.html',
-             '<%= yeoman.dist %>/views/{,*/}*.jade'],
+        '<%= yeoman.dist %>/views/{,*/}*.jade'],
       css: ['<%= yeoman.dist %>/public/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>/public']
@@ -342,6 +377,15 @@ module.exports = function (grunt) {
       test: [
         'compass'
       ],
+      debug: {
+        tasks: [
+          'nodemon',
+          'node-inspector'
+        ],
+        options: {
+          logConcurrentOutput: true
+        }
+      },
       dist: [
         'compass:dist',
         'imagemin',
@@ -381,10 +425,19 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
+      }
+    },
+
+    mochaTest: {
+      options: {
+        reporter: 'spec'
       },
-      e2e: {
-        configFile: 'karma-e2e.conf.js',
-        singleRun: true
+      src: ['test/server/**/*.js']
+    },
+
+    env: {
+      test: {
+        NODE_ENV: 'test'
       }
     }
   });
@@ -410,6 +463,16 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
     }
 
+    if (target === 'debug') {
+      return grunt.task.run([
+        'clean:server',
+        'bower-install',
+        'concurrent:server',
+        'autoprefixer',
+        'concurrent:debug'
+      ]);
+    }
+
     grunt.task.run([
       'clean:server',
       'bower-install',
@@ -419,6 +482,7 @@ module.exports = function (grunt) {
       'open',
       'watch'
     ]);
+    return null;
   });
 
   grunt.registerTask('server', function () {
@@ -426,27 +490,32 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-  grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'karma:unit',
-    'karma:e2e',
-  ]);
+  grunt.registerTask('test', function(target) {
+    if (target === 'server') {
+      return grunt.task.run([
+        'env:test',
+        'mochaTest'
+      ]);
+    }
 
-  grunt.registerTask('test:unit', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'karma:unit',
-  ]);
+    if (target === 'client') {
+      return grunt.task.run([
+        'clean:server',
+        'concurrent:test',
+        'autoprefixer',
+        'karma'
+      ]);
+    }
 
-  grunt.registerTask('test:e2e', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
-    'karma:e2e',
-  ]);
+    grunt.task.run([
+      'env:test',
+      'mochaTest',
+      'clean:server',
+      'concurrent:test',
+      'autoprefixer',
+      'karma'
+    ]);
+  });
 
   grunt.registerTask('build', [
     'clean:dist',
