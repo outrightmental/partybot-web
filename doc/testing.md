@@ -9,6 +9,8 @@ Testing
 
 [mongoose-mock](testing/mongoose-mock.md)
 
+[proxyquire](testing/proxyquire.md)
+
 [sandboxed-module](testing/sandboxed-module.md)
 
 [sinon](testing/sinon.md)
