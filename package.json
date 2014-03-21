@@ -2,7 +2,12 @@
   "name": "partybot-web",
   "version": "0.0.1",
   "description": "PartyBot Web Application",
-  "keywords": ["party", "bot", "web", "application"],
+  "keywords": [
+    "party",
+    "bot",
+    "web",
+    "application"
+  ],
   "homepage": "http://party.botserve.me/",
   "license": "MIT",
   "authors": [
@@ -79,7 +84,7 @@
     "karma-requirejs": "~0.2",
     "karma-script-launcher": "~0.1",
     "load-grunt-tasks": "~0.2",
-    "mongoose-mock": "~0.1",
+    "mockgoose": "~1.7",
     "proxyquire": "~0.5",
     "requirejs": "~2.1",
     "should": "~3.2",
