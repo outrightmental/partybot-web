@@ -27,10 +27,14 @@ Twitter
 
 http://party.botserve.me
 
-# Angular Fullstack
+# Workflow
 
-[angular-fullstack](doc/angular-fullstack.md)
+[workflow](doc/workflow.md)
 
 # Testing
 
 [testing](doc/testing.md)
+
+# Data
+
+[data](doc/data.md)
