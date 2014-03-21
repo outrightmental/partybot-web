@@ -7,7 +7,7 @@ Testing
 
 [mocha](testing/mocha.md)
 
-[mongoose-mock](testing/mongoose-mock.md)
+[mockgoose](testing/mockgoose.md)
 
 [proxyquire](testing/proxyquire.md)
 
