@@ -33,4 +33,4 @@ http://party.botserve.me
 
 # Testing
 
-[testing](doc/testing.md))
+[testing](doc/testing.md)
