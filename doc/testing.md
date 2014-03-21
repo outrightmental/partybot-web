@@ -1,15 +1,17 @@
 Testing
 ====
 
-[factory-lady](test/factory-lady.md)
+[factory-lady](testing/factory-lady.md)
 
-[karma](test/karma.md)
+[karma](testing/karma.md)
 
-[mocha](test/mocha.md)
+[mocha](testing/mocha.md)
 
-[sandboxed-module](test/sandboxed-module.md)
+[mongoose-mock](testing/mongoose-mock.md)
 
-[sinon](test/sinon.md)
+[sandboxed-module](testing/sandboxed-module.md)
+
+[sinon](testing/sinon.md)
 
 Additional Resources
 ====
