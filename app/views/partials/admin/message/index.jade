@@ -1,0 +1,40 @@
+div(ng-include='\'partials/global/header\'')
+
+section#main(ng-show="messages.length")
+  .row-fluid.view(ng-repeat="(id, message) in messages | filter:statusFilter track by $index",ng-class="{completed: message.completed, editing: message == editedMessage}")
+    hr
+    div.col-xs-12.col-sm-3
+      p id: <strong>{{message._id}}</strong>
+      a.btn.btn-primary(ng-click="editMessage(id)") Edit
+    div.col-xs-12.col-sm-3
+      p(ng-show="message.content").party-content {{message.content}}
+    div.col-xs-12.col-sm-3
+      p Type: <strong>{{message.type}}</strong>
+      p State: <strong>{{message.state}}</strong>
+    div.col-xs-12.col-sm-3
+      p Created At <strong>{{message.createdAt | date:'short'}}</strong>
+      p Updated At <strong>{{message.updatedAt | date:'short'}}</strong>
+    .clearfix
+
+
+.row-fluid
+  hr
+  .col-xs-12.col-sm-6
+    h3 Create New Message
+    form#message-form(ng-submit="addMessage()")
+      input#new-message(placeholder="New Message Name",ng-model="newMessage",autofocus="")
+
+//
+  .row-fluid.mmf-admin-row
+    .col-xs-12.col-sm-6(ng-show="messages.length")
+      h2 Manage Messages
+      span#message-countstrong {{remainingCount}}
+        ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
+        ul#filters
+          li
+            a(ng-class="{selected: status == ''}", href="/admin/message?") All
+          li
+            a(ng-class="{selected: status == 'active'}", href="/admin/message?q=active") Active
+          li
+            a(ng-class="{selected: status == 'completed'}", href="/admin/message?q=completed") Completed
+        button#clear-completed(ng-click="clearCompletedMessages()",ng-show="completedCount") Clear completed ({{completedCount}})

@@ -29,10 +29,23 @@ angular.module('partybotWebApp', [
         templateUrl: 'partials/chat',
         controller: 'ChatCtrl'
       })
+    /**
+     * Admin Messages
+     */
+      .when('/admin/message', {
+        templateUrl: 'partials/admin/message/index',
+        controller: 'AdminMessageIndexCtrl',
+      })
+      .when('/admin/message/:messageId', {
+        templateUrl: 'partials/admin/message/edit',
+        controller: 'AdminMessageEditCtrl',
+      })
+
       .otherwise({
         redirectTo: '/'
       });
       
+    
     $locationProvider.html5Mode(true);
       
     // Intercept 401s and redirect you to login

@@ -1,0 +1,46 @@
+div(ng-include='\'partials/global/header\'')
+
+section#main(ng-show="message")
+  .row-fluid.mmf-admin-row.mmf-admin-message.view
+    div.col-sm-12
+      h1 Edit "{{message.name}}"
+      form(ng-submit="saveMessage()")
+
+        .form-group
+          label(for="inputMessageType") Type
+          select#inputMessageType.form-control(ng-model="message.type",type="text",placeholder="Enter Message Type")
+            option(value="broadcast") Broadcast
+
+        .form-group
+          label(for="inputMessageState") State
+          select#inputMessageState.form-control(ng-model="message.state",type="text",placeholder="Enter Message State")
+            option(value="pending") Pending
+            option(value="complete") Complete
+
+        .form-group
+          label(for="inputMessagContent") Content
+          textarea#inputMessagContent.form-control(ng-model="message.content",type="text",placeholder="Enter Message Content")
+
+        p Created At <strong>{{message.createdAt | date:'short'}}</strong>
+
+      a.btn.btn-success(ng-click="saveMessage()") Save
+      a.btn.btn-default(href="/admin/message") Cancel
+      hr
+      a.danger(ng-click="removeMessage()") Delete This Message
+
+
+
+//
+  .row-fluid.mmf-admin-row
+    .col-xs-12.col-sm-6(ng-show="messages.length")
+      h2 Manage Messages
+      span#message-countstrong {{remainingCount}}
+        ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
+        ul#filters
+          li
+            a(ng-class="{selected: status == ''}", href="/admin/message?") All
+          li
+            a(ng-class="{selected: status == 'active'}", href="/admin/message?q=active") Active
+          li
+            a(ng-class="{selected: status == 'completed'}", href="/admin/message?q=completed") Completed
+        button#clear-completed(ng-click="clearCompletedMessages()",ng-show="completedCount") Clear completed ({{completedCount}})
