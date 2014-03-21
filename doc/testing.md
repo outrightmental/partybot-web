@@ -1,15 +1,16 @@
 Testing Technologies Used
 ====
 
+[factory-lady](test/factory-lady.md)
+
 [karma](test/karma.md)
 
 [mocha](test/mocha.md)
 
-[pow-mongo-fixtures](test/mongo-fixtures.md)
+[pow-mongo-fixtures](test/mongo-fixtures.md)Additional Resources
 
-[factory-lady](test/factory-lady.md)
+[sinon](test/sinon.md)
 
-Additional Resources
 ====
 
 [Testing Your Model with Mocha, Mongo, and NodeJS](http://www.wekeroad.com/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/)
