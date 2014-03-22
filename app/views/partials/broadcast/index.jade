@@ -1,6 +1,6 @@
 div(ng-include='\'partials/global/header\'')
 
-.row-fluid.view.party-broadcast(ng-repeat="broadcast in broadcasts",ng-class="broadcast.state")
+.row-fluid.view.party-broadcast(ng-repeat="(id, broadcast) in broadcasts",ng-class="broadcast.state")
   hr
   div.col-xs-12.col-sm-2
     p.id {{broadcast._id}}
@@ -14,7 +14,8 @@ div(ng-include='\'partials/global/header\'')
   div.col-xs-12.col-sm-2
     p.runSeconds {{broadcast.runSeconds}}
   div.col-xs-12.col-sm-2
-    a.btn.btn-primary(ng-click="editBroadcast(id)") Edit
+    a.btn.btn-danger(ng-click="removeBroadcast(id)") Delete
+
   .clearfix
 
 
@@ -33,9 +34,9 @@ div(ng-include='\'partials/global/header\'')
         ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
         ul#filters
           li
-            a(ng-class="{selected: status == ''}", href="/admin/broadcast?") All
+            a(ng-class="{selected: status == ''}", href="/broadcast?") All
           li
-            a(ng-class="{selected: status == 'active'}", href="/admin/broadcast?q=active") Active
+            a(ng-class="{selected: status == 'active'}", href="/broadcast?q=active") Active
           li
-            a(ng-class="{selected: status == 'completed'}", href="/admin/broadcast?q=completed") Completed
+            a(ng-class="{selected: status == 'completed'}", href="/broadcast?q=completed") Completed
         button#clear-completed(ng-click="clearCompletedBroadcasts()",ng-show="completedCount") Clear completed ({{completedCount}})

@@ -9,13 +9,15 @@ section#main(ng-show="broadcast")
         .form-group
           label(for="inputBroadcastType") Type
           select#inputBroadcastType.form-control(ng-model="broadcast.type",type="text",placeholder="Enter Broadcast Type")
-            option(value="broadcast") Broadcast
+            option(value="default") Default
 
         .form-group
           label(for="inputBroadcastState") State
           select#inputBroadcastState.form-control(ng-model="broadcast.state",type="text",placeholder="Enter Broadcast State")
-            option(value="pending") Pending
-            option(value="complete") Complete
+            option(value="future") Future
+            option(value="now") Now
+            option(value="past") Past
+
 
         .form-group
           label(for="inputMessagContent") Content
@@ -24,7 +26,7 @@ section#main(ng-show="broadcast")
         p Created At <strong>{{broadcast.createdAt | date:'short'}}</strong>
 
       a.btn.btn-success(ng-click="saveBroadcast()") Save
-      a.btn.btn-default(href="/admin/broadcast") Cancel
+      a.btn.btn-default(href="/broadcast") Cancel
       hr
       a.danger(ng-click="removeBroadcast()") Delete This Broadcast
 
@@ -38,9 +40,9 @@ section#main(ng-show="broadcast")
         ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
         ul#filters
           li
-            a(ng-class="{selected: status == ''}", href="/admin/broadcast?") All
+            a(ng-class="{selected: status == ''}", href="/broadcast?") All
           li
-            a(ng-class="{selected: status == 'active'}", href="/admin/broadcast?q=active") Active
+            a(ng-class="{selected: status == 'active'}", href="/broadcast?q=active") Active
           li
-            a(ng-class="{selected: status == 'completed'}", href="/admin/broadcast?q=completed") Completed
+            a(ng-class="{selected: status == 'completed'}", href="/broadcast?q=completed") Completed
         button#clear-completed(ng-click="clearCompletedBroadcasts()",ng-show="completedCount") Clear completed ({{completedCount}})

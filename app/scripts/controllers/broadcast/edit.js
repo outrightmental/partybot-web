@@ -6,7 +6,7 @@ angular.module('partybotWebApp')
       $scope.broadcastId = $route.current.params.broadcastId;
 
     if (!$scope.broadcastId)
-      $location.path('/admin/broadcast');
+      $location.path('/broadcast');
 
     $scope.broadcast = Broadcast.get({broadcastId: $scope.broadcastId}, function(broadcast) {
     });
@@ -22,13 +22,13 @@ angular.module('partybotWebApp')
         return;
       }
       $scope.broadcast.$remove();
-      $location.path('/admin/broadcast')
+      $location.path('/broadcast')
     };
 
     // update broadcast
     $scope.saveBroadcast = function() {
       $scope.broadcast.$update();
-      $location.path('/admin/broadcast')
+      $location.path('/broadcast')
     }
 
 

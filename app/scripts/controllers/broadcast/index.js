@@ -38,20 +38,18 @@ angular.module('partybotWebApp')
       $scope.newBroadcast = '';
     };
 
-    /*
-     // remove broadcast locally and remotely
-     $scope.removeBroadcast = function (id) {
-     if (!confirm('Are you sure you want to delete this Broadcast?')) {
-     return;
-     }
-     $scope.broadcasts[id].$remove();
-     $scope.broadcasts.splice(id, 1);
-     };
-     */
+    // remove broadcast locally and remotely
+    $scope.removeBroadcast = function (id) {
+      if (!confirm('Are you sure you want to delete this Broadcast?')) {
+        return;
+      }
+      $scope.broadcasts[id].$remove();
+      $scope.broadcasts.splice(id, 1);
+    };
 
     // begin editing a broadcast, save the original in case of cancel
     $scope.editBroadcast = function (id) {
-      $location.path('/admin/broadcast/' + $scope.broadcasts[id]._id);
+      $location.path('/broadcast/' + $scope.broadcasts[id]._id);
       /*
        $scope.editedBroadcast = $scope.broadcasts[id];
        $scope.originalBroadcast = angular.extend({}, $scope.editedBroadcast);
