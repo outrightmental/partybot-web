@@ -43,7 +43,10 @@ body {
 
 .party-broadcast {
   .id {
-
+    font-size:0.6180339em;
+    font-family:monospace;
+    line-height:1em;
+    word-wrap: break-word;
   }
   .type {
 
@@ -55,9 +58,19 @@ body {
 
   }
   .runAt {
-
+    &.day {
+      font-size:1em;
+    }
+    &.time {
+      font-size:2em;
+      font-weight:bold;
+    }
   }
   .runSeconds {
-
+    font-size:3em;
+    font-weight:bold;
+    .label {
+      font-size:0.3em;
+    }
   }
 }

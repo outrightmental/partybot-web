@@ -2,18 +2,22 @@ div(ng-include='\'partials/global/header\'')
 
 .row-fluid.view.party-broadcast(ng-repeat="(id, broadcast) in broadcasts",ng-class="broadcast.state")
   hr
-  div.col-xs-12.col-sm-2
+  div.col-xs-12.col-sm-1
     p.id {{broadcast._id}}
     p.type {{broadcast.type}}
   div.col-xs-12.col-sm-2
     p.content {{broadcast.content}}
-  div.col-xs-12.col-sm-2
+  div.col-xs-12.col-sm-1
     p.state {{broadcast.state}}
-  div.col-xs-12.col-sm-2
-    p.runAt {{broadcast.runAt | date:'short'}}
-  div.col-xs-12.col-sm-2
+  div.col-xs-12.col-sm-3
+    p.runAt.time {{broadcast.runAt | date:'HH:mm:ss'}}
+    p.runAt.day {{broadcast.runAt | date:'yyyy MMM d'}}
+  div.col-xs-12.col-sm-3
     p.runSeconds {{broadcast.runSeconds}}
-  div.col-xs-12.col-sm-2
+      span.label
+        ng-pluralize(count="broadcast.runSeconds",
+          when="{'one':'second','other':'seconds'}")
+  div.col-xs-12.col-sm-1
     a.btn.btn-danger(ng-click="removeBroadcast(id)") Delete
 
   .clearfix
