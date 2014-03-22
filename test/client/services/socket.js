@@ -2,8 +2,6 @@
 
 describe('Service: socket', function () {
 
-  console.log('balls');
-
   // load the service's module
   beforeEach(module('partybotWebApp'));
 

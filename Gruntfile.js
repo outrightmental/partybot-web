@@ -516,7 +516,7 @@ module.exports = function (grunt) {
       ]);
     }
 
-    if (target === 'client') {
+    else if (target === 'client') {
       return grunt.task.run([
         'clean:server',
         'concurrent:test',
@@ -525,13 +525,9 @@ module.exports = function (grunt) {
       ]);
     }
 
-    grunt.task.run([
-      'env:test',
-      'mochaTest',
-      'clean:server',
-      'concurrent:test',
-      'autoprefixer',
-      'karma'
+    else grunt.task.run([
+      'test:server',
+      'test:client'
     ]);
   });
 
