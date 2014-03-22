@@ -1,6 +1,8 @@
 Testing
 ====
 
+[chai](testing/chai.md)
+
 [factory-lady](testing/factory-lady.md)
 
 [karma](testing/karma.md)
