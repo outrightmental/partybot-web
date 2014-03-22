@@ -1,6 +1,12 @@
 'use strict';
 
 angular.module('partybotWebApp')
-  .service('Broadcast', function Broadcast() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+  .service('Broadcast', function ($resource) {
+    return $resource('api/broadcasts/:broadcastId', {
+      broadcastId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
   });

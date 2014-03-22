@@ -41,10 +41,18 @@ angular.module('partybotWebApp', [
         controller: 'AdminMessageEditCtrl',
       })
 
+    /**
+     *  Broadcasts
+     */
       .when('/broadcast', {
-        templateUrl: 'partials/broadcast',
-        controller: 'BroadcastCtrl'
+        templateUrl: 'partials/broadcast/index',
+        controller: 'BroadcastIndexCtrl'
       })
+      .when('/broadcast/:broadcastId', {
+        templateUrl: 'partials/broadcast/edit',
+        controller: 'BroadcastEditCtrl'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

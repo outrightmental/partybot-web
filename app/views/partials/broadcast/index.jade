@@ -1,0 +1,40 @@
+div(ng-include='\'partials/global/header\'')
+
+section#main(ng-show="broadcasts.length")
+  .row-fluid.view(ng-repeat="(id, broadcast) in broadcasts | filter:statusFilter track by $index",ng-class="{completed: broadcast.completed, editing: broadcast == editedBroadcast}")
+    hr
+    div.col-xs-12.col-sm-3
+      p id: <strong>{{broadcast._id}}</strong>
+      a.btn.btn-primary(ng-click="editBroadcast(id)") Edit
+    div.col-xs-12.col-sm-3
+      p(ng-show="broadcast.content").party-content {{broadcast.content}}
+    div.col-xs-12.col-sm-3
+      p Type: <strong>{{broadcast.type}}</strong>
+      p State: <strong>{{broadcast.state}}</strong>
+    div.col-xs-12.col-sm-3
+      p Created At <strong>{{broadcast.createdAt | date:'short'}}</strong>
+      p Updated At <strong>{{broadcast.updatedAt | date:'short'}}</strong>
+    .clearfix
+
+
+.row-fluid
+  hr
+  .col-xs-12.col-sm-6
+    h3 Create New Broadcast
+    form#broadcast-form(ng-submit="addBroadcast()")
+      input#new-broadcast(placeholder="New Broadcast Name",ng-model="newBroadcast",autofocus="")
+
+//
+  .row-fluid.mmf-admin-row
+    .col-xs-12.col-sm-6(ng-show="broadcasts.length")
+      h2 Manage Broadcasts
+      span#broadcast-countstrong {{remainingCount}}
+        ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
+        ul#filters
+          li
+            a(ng-class="{selected: status == ''}", href="/admin/broadcast?") All
+          li
+            a(ng-class="{selected: status == 'active'}", href="/admin/broadcast?q=active") Active
+          li
+            a(ng-class="{selected: status == 'completed'}", href="/admin/broadcast?q=completed") Completed
+        button#clear-completed(ng-click="clearCompletedBroadcasts()",ng-show="completedCount") Clear completed ({{completedCount}})

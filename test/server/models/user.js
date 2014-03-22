@@ -17,14 +17,13 @@ mockUser._id = ObjectId;
 
 describe('User', function () {
 
-  // create mock models using data we can count on
   beforeEach(function (done) {
+    //Reset the database before every test.
     mockgoose.reset();
     done();
   });
 
   afterEach(function (done) {
-    //Reset the database after every test.
     done();
   });
 

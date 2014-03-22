@@ -1,0 +1,46 @@
+div(ng-include='\'partials/global/header\'')
+
+section#main(ng-show="broadcast")
+  .row-fluid.mmf-admin-row.mmf-admin-broadcast.view
+    div.col-sm-12
+      h1 Edit "{{broadcast.name}}"
+      form(ng-submit="saveBroadcast()")
+
+        .form-group
+          label(for="inputBroadcastType") Type
+          select#inputBroadcastType.form-control(ng-model="broadcast.type",type="text",placeholder="Enter Broadcast Type")
+            option(value="broadcast") Broadcast
+
+        .form-group
+          label(for="inputBroadcastState") State
+          select#inputBroadcastState.form-control(ng-model="broadcast.state",type="text",placeholder="Enter Broadcast State")
+            option(value="pending") Pending
+            option(value="complete") Complete
+
+        .form-group
+          label(for="inputMessagContent") Content
+          textarea#inputMessagContent.form-control(ng-model="broadcast.content",type="text",placeholder="Enter Broadcast Content")
+
+        p Created At <strong>{{broadcast.createdAt | date:'short'}}</strong>
+
+      a.btn.btn-success(ng-click="saveBroadcast()") Save
+      a.btn.btn-default(href="/admin/broadcast") Cancel
+      hr
+      a.danger(ng-click="removeBroadcast()") Delete This Broadcast
+
+
+
+//
+  .row-fluid.mmf-admin-row
+    .col-xs-12.col-sm-6(ng-show="broadcasts.length")
+      h2 Manage Broadcasts
+      span#broadcast-countstrong {{remainingCount}}
+        ng-pluralize(count="remainingCount",when="{ one: 'item left', other: 'items left' }")
+        ul#filters
+          li
+            a(ng-class="{selected: status == ''}", href="/admin/broadcast?") All
+          li
+            a(ng-class="{selected: status == 'active'}", href="/admin/broadcast?q=active") Active
+          li
+            a(ng-class="{selected: status == 'completed'}", href="/admin/broadcast?q=completed") Completed
+        button#clear-completed(ng-click="clearCompletedBroadcasts()",ng-show="completedCount") Clear completed ({{completedCount}})
