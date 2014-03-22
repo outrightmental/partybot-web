@@ -1,5 +1,13 @@
 div(ng-include='\'partials/global/header\'')
 
+.row-fluid
+  .col-xs-12.col-sm-6
+    h3 Create New Broadcast
+    form#broadcast-form(ng-submit="addBroadcast()")
+      input#new-broadcast(placeholder="New Broadcast Name",ng-model="newBroadcast",autofocus="")
+  .col-xs-12.col-sm-6
+  .clearfix
+
 .row-fluid.view.party-broadcast(ng-repeat="(id, broadcast) in broadcasts",ng-class="broadcast.state")
   hr
   div.col-xs-12.col-sm-1
@@ -21,14 +29,6 @@ div(ng-include='\'partials/global/header\'')
     a.btn.btn-danger(ng-click="removeBroadcast(id)") Delete
 
   .clearfix
-
-
-.row-fluid
-  hr
-  .col-xs-12.col-sm-6
-    h3 Create New Broadcast
-    form#broadcast-form(ng-submit="addBroadcast()")
-      input#new-broadcast(placeholder="New Broadcast Name",ng-model="newBroadcast",autofocus="")
 
 //
   .row-fluid.mmf-admin-row
