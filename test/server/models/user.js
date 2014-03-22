@@ -1,59 +1,80 @@
 'use strict';
+// Assertion Libraries
+var should = require('should');
 
-var should = require('should'),
-    mongoose = require('mongoose'),
-    User = mongoose.model('User');
+// Mockgoose
+var mongoose = require('mongoose');
+var mockgoose = require('mockgoose');
+mockgoose(mongoose);
 
-var user;
+// Mock User Schema
+mongoose.model('User', new mongoose.Schema());
+var User = mongoose.model('User'),
+  ObjectId = mongoose.Types.ObjectId();
+var mockUserData = {
+//  _id: ObjectId,
+  'name': 'Rene Harris',
+  'role': 'user',
+  'provider': 'local',
+  'email': 'rene.harris@outrightmental.com',
+  'password': 'password'
+};
 
-describe('User Model', function() {
-  before(function(done) {
-    user = new User({
-      provider: 'local',
-      name: 'Fake User',
-      email: 'test@test.com',
-      password: 'password'
-    });
-
-    // Clear users before testing
-    User.remove().exec();
+describe('User', function () {
+  // create mock models using data we can count on
+  beforeEach(function (done) {
+    mockgoose.reset();
     done();
   });
 
-  afterEach(function(done) {
-    User.remove().exec();
+  afterEach(function (done) {
     done();
   });
 
-  it('should begin with no users', function(done) {
-    User.find({}, function(err, users) {
+  it('should begin with no users', function (done) {
+    User.find({}, function (err, users) {
       users.should.have.length(0);
-      done();
+      done(err);
     });
   });
 
-  it('should fail when saving a duplicate user', function(done) {
-    user.save();
-    var userDup = new User(user);
-    userDup.save(function(err) {
+  it('should create a new user', function (done) {
+    var newUser = new User(mockUserData);
+    newUser.provider = 'local';
+    newUser.save(function (err) {
+      done(err);
+    });
+  });
+
+  it('should fail when saving a duplicate user', function (done) {
+    var newUser = new User(mockUserData);
+    newUser.provider = 'local';
+    newUser.save(function (err) {
+      should.not.exist(err);
+    });
+
+    var dupeUser = new User(mockUserData);
+    dupeUser.provider = 'local';
+    dupeUser.save(function (err) {
       should.exist(err);
       done();
     });
+
   });
 
-  it('should fail when saving without an email', function(done) {
+  it('should fail when saving without an email', function (done) {
     user.email = '';
-    user.save(function(err) {
+    user.save(function (err) {
       should.exist(err);
       done();
     });
   });
 
-  it("should authenticate user if password is valid", function() {
+  it("should authenticate user if password is valid", function () {
     user.authenticate('password').should.be.true;
   });
 
-  it("should not authenticate user if password is invalid", function() {
+  it("should not authenticate user if password is invalid", function () {
     user.authenticate('blah').should.not.be.true;
   });
 

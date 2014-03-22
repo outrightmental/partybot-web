@@ -1,4 +1,6 @@
 //users.js
+
+/*
 var id = require('pow-mongodb-fixtures').createObjectId;
 
 var users = exports.users = {
@@ -16,3 +18,5 @@ var users = exports.users = {
     name: 'Tobias'
   }
 }
+
+*/
