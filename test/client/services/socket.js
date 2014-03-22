@@ -2,6 +2,8 @@
 
 describe('Service: socket', function () {
 
+  console.log('balls');
+
   // load the service's module
   beforeEach(module('partybotWebApp'));
 
@@ -12,7 +14,7 @@ describe('Service: socket', function () {
   }));
 
   it('should do something', function () {
-    expect(!!socket).toBe(true);
+    expect(socket).toBeDefined();
   });
 
 });

@@ -1,13 +1,20 @@
 'use strict';
 
-var should = require('should'),
-    app = require('../../../server'),
+var chai = require('chai'),
+  should = require('should'),
+  mongoose = require('mongoose');
+
+// mock the database
+var mockgoose = require('mockgoose');
+mockgoose(mongoose);
+
+var app = require('../../../../server'),
     request = require('supertest');
 
-describe('GET /api/incoming/voice', function() {
+describe('GET /api/incoming/sms', function() {
   it('should respond with TwiML', function(done) {
     request(app)
-      .get('/api/incoming/voice')
+      .get('/api/incoming/sms')
       .expect(200)
       .expect('Content-Type', /xml/)
       .end(function(err, res) {
@@ -17,10 +24,10 @@ describe('GET /api/incoming/voice', function() {
   });
 });
 
-describe('POST /api/incoming/voice', function() {
+describe('POST /api/incoming/sms', function() {
   it('should respond with TwiML', function(done) {
     request(app)
-      .post('/api/incoming/voice')
+      .post('/api/incoming/sms')
       .expect(200)
       .expect('Content-Type', /xml/)
       .end(function(err, res) {

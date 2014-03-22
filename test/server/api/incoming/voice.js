@@ -1,13 +1,13 @@
 'use strict';
 
 var should = require('should'),
-    app = require('../../../server'),
+    app = require('../../../../server'),
     request = require('supertest');
 
-describe('GET /api/incoming/sms', function() {
+describe('GET /api/incoming/voice', function() {
   it('should respond with TwiML', function(done) {
     request(app)
-      .get('/api/incoming/sms')
+      .get('/api/incoming/voice')
       .expect(200)
       .expect('Content-Type', /xml/)
       .end(function(err, res) {
@@ -17,10 +17,10 @@ describe('GET /api/incoming/sms', function() {
   });
 });
 
-describe('POST /api/incoming/sms', function() {
+describe('POST /api/incoming/voice', function() {
   it('should respond with TwiML', function(done) {
     request(app)
-      .post('/api/incoming/sms')
+      .post('/api/incoming/voice')
       .expect(200)
       .expect('Content-Type', /xml/)
       .end(function(err, res) {

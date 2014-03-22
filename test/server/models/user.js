@@ -1,26 +1,22 @@
-'use strict';
-// Assertion Libraries
-var should = require('should');
+/* codeToTestTest.js */
+// require mongoose models
+require('../../../lib/models/user');
+var chai = require('chai'),
+  should = require('should'),
+  mongoose = require('mongoose');
 
-// Mockgoose
-var mongoose = require('mongoose');
+// mock the database
 var mockgoose = require('mockgoose');
 mockgoose(mongoose);
 
-// Mock User Schema
-mongoose.model('User', new mongoose.Schema());
+// mock user
 var User = mongoose.model('User'),
   ObjectId = mongoose.Types.ObjectId();
-var mockUserData = {
-//  _id: ObjectId,
-  'name': 'Rene Harris',
-  'role': 'user',
-  'provider': 'local',
-  'email': 'rene.harris@outrightmental.com',
-  'password': 'password'
-};
+var mockUser = require('../../mock/user/rene-harris.js');
+mockUser._id = ObjectId;
 
 describe('User', function () {
+
   // create mock models using data we can count on
   beforeEach(function (done) {
     mockgoose.reset();
@@ -28,6 +24,7 @@ describe('User', function () {
   });
 
   afterEach(function (done) {
+    //Reset the database after every test.
     done();
   });
 
@@ -39,43 +36,31 @@ describe('User', function () {
   });
 
   it('should create a new user', function (done) {
-    var newUser = new User(mockUserData);
-    newUser.provider = 'local';
+    var newUser = new User(mockUser.data);
     newUser.save(function (err) {
       done(err);
     });
   });
 
-  it('should fail when saving a duplicate user', function (done) {
-    var newUser = new User(mockUserData);
-    newUser.provider = 'local';
-    newUser.save(function (err) {
-      should.not.exist(err);
-    });
-
-    var dupeUser = new User(mockUserData);
-    dupeUser.provider = 'local';
-    dupeUser.save(function (err) {
-      should.exist(err);
-      done();
-    });
-
-  });
-
   it('should fail when saving without an email', function (done) {
-    user.email = '';
-    user.save(function (err) {
+    var newUser = new User(mockUser.data);
+    newUser.email = '';
+    newUser.save(function (err) {
       should.exist(err);
       done();
     });
   });
 
-  it("should authenticate user if password is valid", function () {
-    user.authenticate('password').should.be.true;
+  it("should authenticate user if password is valid", function (done) {
+    var newUser = new User(mockUser.data);
+    newUser.authenticate(mockUser.data.password).should.be.true;
+    done();
   });
 
-  it("should not authenticate user if password is invalid", function () {
-    user.authenticate('blah').should.not.be.true;
+  it("should not authenticate user if password is invalid", function (done) {
+    var newUser = new User(mockUser.data);
+    newUser.authenticate(mockUser.data.password+'xxx').should.not.be.true;
+    done();
   });
 
 });
