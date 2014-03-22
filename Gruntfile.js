@@ -1,4 +1,4 @@
-// Generated on 2014-03-21 using generator-angular-fullstack 1.3.2
+// Generated on 2014-03-22 using generator-angular-fullstack 1.3.2
 'use strict';
 
 // # Globbing
@@ -201,7 +201,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     'bower-install': {
       app: {
-        html: '<%= yeoman.app %>/views/index.html',
+        html: '<%= yeoman.app %>/views/index.jade',
         ignorePath: '<%= yeoman.app %>/',
         exclude: ['bootstrap-sass']
       }
@@ -480,7 +480,9 @@ module.exports = function (grunt) {
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
-    } else if (target === 'debug') {
+    }
+
+    if (target === 'debug') {
       return grunt.task.run([
         'clean:server',
         'bower-install',
@@ -488,7 +490,9 @@ module.exports = function (grunt) {
         'autoprefixer',
         'concurrent:debug'
       ]);
-    } else return grunt.task.run([
+    }
+
+    grunt.task.run([
       'clean:server',
       'bower-install',
       'concurrent:server',
@@ -510,14 +514,18 @@ module.exports = function (grunt) {
         'env:test',
         'mochaTest'
       ]);
-    } else if (target === 'client') {
+    }
+
+    if (target === 'client') {
       return grunt.task.run([
         'clean:server',
         'concurrent:test',
         'autoprefixer',
         'karma'
       ]);
-    } else return grunt.task.run([
+    }
+
+    grunt.task.run([
       'env:test',
       'mochaTest',
       'clean:server',
