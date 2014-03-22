@@ -41,12 +41,23 @@ body {
   margin: 0;
 }
 
-/* poor man's grid system */
-.col {
-  float: left;
-  width: 350px;
-}
+.party-broadcast {
+  .id {
 
-.clr {
-  clear: both;
+  }
+  .type {
+
+  }
+  .content {
+
+  }
+  .state {
+
+  }
+  .runAt {
+
+  }
+  .runSeconds {
+
+  }
 }

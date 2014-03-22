@@ -1,19 +1,19 @@
 div(ng-include='\'partials/global/header\'')
-
-section#main(ng-show="broadcasts.length")
-  .row-fluid.view(ng-repeat="(id, broadcast) in broadcasts | filter:statusFilter track by $index",ng-class="{completed: broadcast.completed, editing: broadcast == editedBroadcast}")
+  .row-fluid.view.party-broadcast(ng-repeat="(id, broadcast) in broadcasts",ng-class="broadcast.state")
     hr
-    div.col-xs-12.col-sm-3
-      p id: <strong>{{broadcast._id}}</strong>
+    div.col-xs-12.col-sm-2
+      p.id {{broadcast._id}}
+      p.type {{broadcast.type}}
+    div.col-xs-12.col-sm-2
+      p.content {{broadcast.content}}
+    div.col-xs-12.col-sm-2
+      p.state {{broadcast.state}}
+    div.col-xs-12.col-sm-2
+      p.runAt {{broadcast.runAt | date:'short'}}
+    div.col-xs-12.col-sm-2
+      p.runSeconds {{broadcast.runSeconds}}
+    div.col-xs-12.col-sm-2
       a.btn.btn-primary(ng-click="editBroadcast(id)") Edit
-    div.col-xs-12.col-sm-3
-      p(ng-show="broadcast.content").party-content {{broadcast.content}}
-    div.col-xs-12.col-sm-3
-      p Type: <strong>{{broadcast.type}}</strong>
-      p State: <strong>{{broadcast.state}}</strong>
-    div.col-xs-12.col-sm-3
-      p Created At <strong>{{broadcast.createdAt | date:'short'}}</strong>
-      p Updated At <strong>{{broadcast.updatedAt | date:'short'}}</strong>
     .clearfix
 
 
