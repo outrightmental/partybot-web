@@ -1,6 +1,9 @@
 Testing
 ====
 
+In Use
+----
+
 [chai](testing/chai.md)
 
 [factory-lady](testing/factory-lady.md)
@@ -12,6 +15,9 @@ Testing
 [mockgoose](testing/mockgoose.md)
 
 [proxyquire](testing/proxyquire.md)
+
+Not In Use (but interesting)
+----
 
 [sandboxed-module](testing/sandboxed-module.md)
 
@@ -26,7 +32,7 @@ Additional Resources
 
 [Unit and End to End Testing in AngularJS](http://www.sitepoint.com/unit-and-e2e-testing-in-angularjs/)
 
-
+[Writing Tests for Node.js Web Apps](http://thibault.co/writing-tests-for-node-js-web-apps/)
 
 
 

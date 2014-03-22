@@ -43,6 +43,7 @@
     "twilio": "~1.6"
   },
   "devDependencies": {
+    "chai":"~1.9",
     "factory-lady": "~0.1",
     "grunt": "~0.4",
     "grunt-autoprefixer": "~0.4",
