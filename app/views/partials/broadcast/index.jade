@@ -9,7 +9,6 @@ div(ng-include='\'partials/global/header\'')
   .clearfix
 
 .row-fluid.view.party-broadcast(ng-repeat="(id, broadcast) in broadcasts",ng-class="broadcast.state")
-  hr
   div.col-xs-12.col-sm-1
     p.id {{broadcast._id}}
     p.type {{broadcast.type}}
@@ -26,7 +25,7 @@ div(ng-include='\'partials/global/header\'')
         ng-pluralize(count="broadcast.runSeconds",
           when="{'one':'second','other':'seconds'}")
   div.col-xs-12.col-sm-1
-    a.btn.btn-danger(ng-click="removeBroadcast(id)") Delete
+    a.btn.btn-danger(ng-click="removeBroadcast(id)",ng-show="broadcast.state=='past'") Delete
 
   .clearfix
 

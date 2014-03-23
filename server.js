@@ -33,7 +33,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
   }
 });
 
-  // Passport Configuration
+// Passport Configuration
 var passport = require('./lib/config/passport');
 
 var app = express();
@@ -52,6 +52,11 @@ var io = require('socket.io').listen(server);
 server.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
+
+// Poor man's worker
+var workerInterval = setInterval(function () {
+  require('./lib/controllers/broadcasts').worker();
+}, 1000);
 
 // Expose app
 if (!exports)

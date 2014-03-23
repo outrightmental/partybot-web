@@ -40,9 +40,11 @@ angular.module('partybotWebApp')
 
     // remove broadcast locally and remotely
     $scope.removeBroadcast = function (id) {
+      /*
       if (!confirm('Are you sure you want to delete this Broadcast?')) {
         return;
       }
+      */
       $scope.broadcasts[id].$remove();
       $scope.broadcasts.splice(id, 1);
     };

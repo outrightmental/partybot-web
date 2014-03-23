@@ -1,49 +1,38 @@
 'use strict';
 
 angular.module('partybotWebApp')
-  .controller('MainCtrl', function ($scope, $timeout, Message) {
+  .controller('MainCtrl', function ($scope, $timeout, BroadcastNow) {
 
-    $scope.messages = [];
-    $scope.mainMessage = null;
+    $scope.mainBroadcast = null;
 
-    // watch the messages array for changes and update the counts
-    $scope.$watch('messages', function () {
+    // watch the broadcasts array for changes and update the counts
+    $scope.$watch('mainBroadcast', function () {
     }, true);
 
-    // Poll server to regularly update messages
-    (function refreshMessages() {
-      Message.query(function (response) {
-        $scope.messages = response;
-        if ($scope.messages.length) {
-          processMessage($scope.messages.pop());
+    // Poll server to regularly update broadcasts
+    (function refreshBroadcasts() {
+
+      BroadcastNow.get({}, function (broadcast) {
+        if (broadcast && broadcast._id) {
+          $scope.mainBroadcast = broadcast;
         } else {
-          reset();
+          $scope.mainBroadcast = null;
         }
-        $scope.promise = $timeout(refreshMessages, 1000);
       });
+
+      $scope.promise = $timeout(refreshBroadcasts, 1000);
+
+      /*
+       BroadcastNow.query(function (response) {
+       //        $scope.broadcasts = response;
+       if (response && response.length) {
+       console.log('BALLS', response);
+       } else {
+       $scope.mainBroadcast = null;
+       }
+
+       });
+       */
     })();
 
-    /**
-     *
-     * @param message
-     */
-    function processMessage(message) {
-      if (message && message.content && message.content.length) {
-        $scope.mainMessage = message.content;
-      }
-      message.state = 'completed';
-      message.$update();
-    }
-
-    /**
-     *
-     */
-    function reset() {
-      $scope.mainMessage = null;
-    }
-
-    // when the controller is destroyed, cancel the polling
-    $scope.$on('destroy', function () {
-      $timeout.cancel($scope.promise);
-    });
   });

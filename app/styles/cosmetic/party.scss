@@ -42,6 +42,9 @@ body {
 }
 
 .party-broadcast {
+  border-top:1px solid #aaa;
+  padding-top:10px;
+  padding-bottom:10px;
   .id {
     font-size:0.6180339em;
     font-family:monospace;
@@ -72,5 +75,14 @@ body {
     .label {
       font-size:0.3em;
     }
+  }
+  &.future {
+
+  }
+  &.now {
+    background-color:#555;
+  }
+  &.past {
+    opacity:0.3;
   }
 }
