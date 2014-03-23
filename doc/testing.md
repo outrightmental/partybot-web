@@ -1,16 +1,19 @@
 Testing
 ====
 
-In Use
+In Use (Acceptance Testing)
 ----
-
-[chai](testing/chai.md)
-
-[factory-lady](testing/factory-lady.md)
 
 [karma](testing/karma.md)
 
+In Use (Acceptance Testing)
+----
+
+[factory-lady](testing/factory-lady.md)
+
 [mocha](testing/mocha.md)
+
+[chai](testing/chai.md)
 
 [mockgoose](testing/mockgoose.md)
 
