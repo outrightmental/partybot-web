@@ -31,7 +31,7 @@ angular.module('partybotWebApp')
       }
 
       var newBroadcast = new Broadcast({
-        content: '{broadcast: "' + broadcastName + '"}'
+        content: broadcastName
       });
       newBroadcast.$save();
       $scope.broadcasts.unshift(newBroadcast);
