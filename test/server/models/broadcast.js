@@ -48,8 +48,38 @@ describe('Broadcast', function () {
       should.not.exist(err);
       Broadcast.findOne({}, function (err, broadcast) {
         should.not.exist(err);
+        should.exist(broadcast);
+        should.exist(broadcast.runAt);
         (broadcast.runAt).should.not.be.below(moment('2 seconds ago'));
         done();
+      });
+    });
+  });
+
+
+  it('each subsequent broadcast is X seconds after the last one', function (done) {
+    var intervalSeconds = 30;
+    // first
+    var firstBroadcast = new Broadcast(mockBroadcast.data);
+    firstBroadcast.runSeconds = intervalSeconds;
+    firstBroadcast.save(function (err) {
+      should.not.exist(err);
+      // second
+      var secondBroadcast = new Broadcast(mockBroadcast.data);
+      secondBroadcast.runSeconds = intervalSeconds;
+      secondBroadcast.save(function (err) {
+        should.not.exist(err);
+        (moment(secondBroadcast.runAt).format())
+          .should.equal(moment(firstBroadcast.runAt).add('seconds', firstBroadcast.runSeconds).format());
+        // third
+        var thirdBroadcast = new Broadcast(mockBroadcast.data);
+        thirdBroadcast.runSeconds = intervalSeconds;
+        thirdBroadcast.save(function (err) {
+          should.not.exist(err);
+          (moment(thirdBroadcast.runAt).format())
+            .should.equal(moment(secondBroadcast.runAt).add('seconds', secondBroadcast.runSeconds).format());
+          done();
+        });
       });
     });
   });
