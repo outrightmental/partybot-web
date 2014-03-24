@@ -13,7 +13,7 @@ PartyBot runs full-stack Javascript: MongoDB, Node.js and the Express framework,
 
 Check out the live broadcast at [http://party.botserve.me](http://party.botserve.me).
 
-Call or text PartyBot at **+17186907272**.
+Call or text PartyBot at **+1 (718) 690-7272**.
 
 # Integration Testing
 
