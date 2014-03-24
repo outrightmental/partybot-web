@@ -41,9 +41,10 @@ angular.module('partybotWebApp')
      * @returns string
      */
     $scope.template = function (broadcast) {
-      if (broadcast && 'type' in broadcast)
+      if (broadcast && 'type' in broadcast) {
         return 'partials/broadcast/type/' + broadcast.type;
+      }
       return null;
-    }
+    };
 
   });
