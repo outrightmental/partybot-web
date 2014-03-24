@@ -4,27 +4,29 @@ Testing
 In Use (Acceptance Testing)
 ----
 
-[karma](testing/karma.md)
+[karma](testing/karma.md) runner.
 
-In Use (Acceptance Testing)
+[jasmine](testing/jasmine.md) assertion.
+
+In Use (Unit Testing)
 ----
 
-[factory-lady](testing/factory-lady.md)
+[mocha](testing/mocha.md) runner.
 
-[mocha](testing/mocha.md)
+[chai](testing/chai.md) assertion.
 
-[chai](testing/chai.md)
+[mockgoose](testing/mockgoose.md) database mocks.
 
-[mockgoose](testing/mockgoose.md)
+[proxyquire](testing/proxyquire.md) dependency injection.
 
-[proxyquire](testing/proxyquire.md)
+[sinon](testing/sinon.md) spies.
 
 Not In Use (but interesting)
 ----
 
-[sandboxed-module](testing/sandboxed-module.md)
+[factory-lady](testing/factory-lady.md) factories.
 
-[sinon](testing/sinon.md)
+[sandboxed-module](testing/sandboxed-module.md) environment manipulation.
 
 Additional Resources
 ====
