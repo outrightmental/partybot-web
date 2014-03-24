@@ -1,0 +1,24 @@
+#broadcast {
+  position: absolute;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  overflow: visible;
+  text-align: center;
+  vertical-align: middle;
+  &.type-default {
+    .message {
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      overflow: visible;
+    }
+    text-align: center;
+    vertical-align: middle;
+    overflow: visible;
+  }
+}

@@ -1,5 +1,4 @@
 #party
-  .logo(ng-hide="mainBroadcast")
-  .mainBroadcast(ng-show="mainBroadcast")
-    .pinpoint
-      h1 {{mainBroadcast.content}}
+  .logo(ng-hide="broadcast")
+
+#broadcast(ng-show="broadcast",ng-include="template(broadcast)",class="type-{{broadcast.type}}")

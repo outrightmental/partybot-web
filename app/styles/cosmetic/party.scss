@@ -24,18 +24,6 @@ body {
     top: -128px;
     background: url(/images/lunatic-roger.png) no-repeat center center;
   }
-  .mainMessage {
-    text-align: center;
-    vertical-align: middle;
-    overflow: visible;
-    .pinpoint{
-      left:-50%;
-      top:-50%;
-      text-align: center;
-      vertical-align: middle;
-      overflow: visible;
-    }
-  }
 }
 
 .overflowable {
