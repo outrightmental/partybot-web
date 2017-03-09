@@ -19,7 +19,7 @@ Call or text PartyBot at **+1 (718) 690-7272**.
 
 # Integration Testing
 
-PartyBot is fully self-tested, with [Mocha](http://visionmedia.github.io/mocha/) &amp; [Chai](http://chaijs.com/) for server unit tests and [Karma](http://karma-runner.github.io/0.12/index.html) &amp; [Jasmine](http://jasmine.github.io/) for client acceptance tests.
+PartyBot is fully self-tested, with [Mocha](http://mochajs.org/) &amp; [Chai](http://chaijs.com/) for server unit tests and [Karma](http://karma-runner.github.io/0.12/index.html) &amp; [Jasmine](http://jasmine.github.io/) for client acceptance tests.
 
 [https://travis-ci.org/outrightmental/partybot-web](https://travis-ci.org/outrightmental/partybot-web)
 
